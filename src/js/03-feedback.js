@@ -2,8 +2,13 @@ import throttle from 'lodash.throttle';
 
 const feedbackFormRef = document.querySelector('.feedback-form');
 
+const btnSubmit = document.querySelector('button');
+
 feedbackFormRef.addEventListener("input", throttle(onFeedbackFormInput, 500));
+
 feedbackFormRef.addEventListener("submit", onFeedbackFormSubmit);
+
+btnSubmit.addEventListener("click", onFeedbackFormSubmit);
 
 const {
   elements: { email, message },
@@ -38,5 +43,5 @@ function onFeedbackFormSubmit(evt) {
     email: email.value,
     message: message.value,
   });
-  evt.currentTarget.reset();
+  feedbackFormRef.reset();
 }
