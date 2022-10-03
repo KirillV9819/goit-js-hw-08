@@ -18,7 +18,7 @@ function launchPlayer() {
   const currTime = JSON.parse(localStorage.getItem('videoplayer-current-time'));
 
   if (currTime) {
-    player.setCurrentTime(time);
+    player.setCurrentTime(currTime);
   }
 };
 
