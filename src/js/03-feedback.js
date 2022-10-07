@@ -37,11 +37,14 @@ function checkStorage() {
 function onFeedbackFormSubmit(evt) {
   evt.preventDefault();
 
-  localStorage.removeItem("feedback-form-state");
+  if ( email.value !== "" && message.value !== "") {
+    localStorage.removeItem("feedback-form-state");
 
   console.log({
     email: email.value,
     message: message.value,
   });
   feedbackFormRef.reset();
+  };
+  
 }
